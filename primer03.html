@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta charset = utf-8>    
+
+<html>
+<head>
+    <title>Primer z gumbi</title>
+</head>    
+
+<body>
+    
+<button id="gumbPrizgi" onClick="prizgi()">Prižgi</button>
+<button id="gumbUgasni" onClick="ugasni()">Ugasni</button>
+
+<br>
+
+<div id="izpis"></div>
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+<script type="text/javascript">
+
+var socket = io.connect("192.168.254.128:8080"); // ustvarimo socket - se povežemo
+
+var izpis = document.getElementById("izpis");
+var stevec = 0; // za štetje sporočil
+
+function prizgi () {
+    socket.emit("ukazArduinu", 1);
+}
+
+function ugasni () {
+    socket.emit("ukazArduinu", 0);
+}
+    
+</script>
+    
+</body>
+
+</html>
