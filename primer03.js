@@ -12,7 +12,7 @@ function handler(req, res) {
         }
     res.writeHead(200);
     res.end(data);
-    })
+    });
 }
 
 http.listen(8080); // določimo na katerih vratih bomo poslušali
